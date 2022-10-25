@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 
 const SignUp = () => {
   return (
-    <Container className="mt-3">
+    <Container className="pt-3 bg-secondary">
       <Row>
         <Form>
           <Col lg={12}>
@@ -62,7 +62,7 @@ const SignUp = () => {
             </Row>
           </Col>
 
-          <Row className="justify-content-lg-center">
+          <Row className="justify-content-lg-center mb-3">
             <Col lg="auto">
               <Button variant="primary" type="submit">
                 Sign up

@@ -5,9 +5,9 @@ import Form from "react-bootstrap/Form";
 
 const LogIn = () => {
   return (
-    <Container className="mt-3">
+    <Container className="pt-3 bg-secondary">
       <Row>
-        <Form>
+        <Form className="mt-2">
           <Col lg={12}>
             <Row className="justify-content-lg-center">
               <Col lg="6">
@@ -47,12 +47,12 @@ const LogIn = () => {
           </Row>
           <Row className="justify-content-lg-center">
             <Col lg="auto">
-              <Button variant="outline-danger" type="submit">
+              <Button variant="outline-warning" type="submit">
                 Login with Google
               </Button>
             </Col>
           </Row>
-          <Row className="justify-content-lg-center mt-3">
+          <Row className="justify-content-lg-center mt-3 mb-3">
             <Col lg="auto">
               <Button variant="outline-dark" type="submit">
                 Login with GitHub
