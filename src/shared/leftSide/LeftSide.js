@@ -12,7 +12,7 @@ const LeftSide = () => {
 
     return (
         <div>
-            <h3 className='bg-warning'>side of left</h3>
+            <h4>All Categories Here</h4>
             {
                 categories.map(category=> <p key={category.id}>
                     <Link to={`tutorial/${category.id}`}>{category.category}</Link>

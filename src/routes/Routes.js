@@ -19,7 +19,8 @@ export const routes = createBrowserRouter([
             },
             {
                 path:'/tutorial/:id',
-                element:<Tutorial></Tutorial>
+                element:<Tutorial></Tutorial>,
+                loader:({params})=>fetch(`http://localhost:5000/programming-languages/${params.id}`)
 
             },
             {
