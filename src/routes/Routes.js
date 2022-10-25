@@ -18,6 +18,11 @@ export const routes = createBrowserRouter([
 
             },
             {
+                path:'/tutorial/:id',
+                element:<Tutorial></Tutorial>
+
+            },
+            {
                 path:'/faq',
                 element:<FAQ></FAQ>
             },
