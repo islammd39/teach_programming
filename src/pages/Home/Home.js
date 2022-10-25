@@ -6,7 +6,7 @@ const Home = () => {
     const allTutorial = useLoaderData();
     return (
         <div>
-            <h4>all tutorial {allTutorial.length}</h4>
+            <h4>Total tutorial {allTutorial.length}</h4>
              {
                 allTutorial.map(tutorial=><TotalTutorial key={tutorial.id} tutorial={tutorial}></TotalTutorial>)
              }
