@@ -14,7 +14,8 @@ const SignUp = () => {
                 <Form.Group className="mb-3">
                   <Form.Label>Full Name</Form.Label>
                   <Form.Control
-                    type="name"
+                    name="name"
+                    type="text"
                     placeholder="Name Surname"
                     required
                   />
@@ -27,7 +28,7 @@ const SignUp = () => {
               <Col lg="6">
                 <Form.Group className="mb-3">
                   <Form.Label>Photo Url</Form.Label>
-                  <Form.Control type="name" placeholder="Photo url" required />
+                  <Form.Control type="text" name="photo" placeholder="Photo url" required />
                 </Form.Group>
               </Col>
             </Row>
@@ -38,6 +39,7 @@ const SignUp = () => {
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label>Email address</Form.Label>
                   <Form.Control
+                    name="email"
                     type="email"
                     placeholder="Enter email"
                     required
@@ -53,6 +55,7 @@ const SignUp = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label>Password</Form.Label>
                   <Form.Control
+                    name="password"
                     type="password"
                     placeholder="Password"
                     required
