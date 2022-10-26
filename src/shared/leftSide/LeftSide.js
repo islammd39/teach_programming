@@ -5,7 +5,7 @@ const LeftSide = () => {
     const [categories, setCategories] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/programming-languages')
+        fetch('https://b610-lerning-platform-server-side-islammd39.vercel.app/programming-languages')
         .then(res=> res.json())
         .then(data=> setCategories(data))
     },[])

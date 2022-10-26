@@ -17,13 +17,13 @@ export const routes = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
-                loader:()=>fetch('http://localhost:5000/programming-languages/')
+                loader:()=>fetch('https://b610-lerning-platform-server-side-islammd39.vercel.app/programming-languages/')
 
             },
             {
                 path:'/tutorial/:id',
                 element:<PrivateRoutes><Tutorial></Tutorial></PrivateRoutes>,
-                loader:({params})=>fetch(`http://localhost:5000/programming-languages/${params.id}`)
+                loader:({params})=>fetch(`https://b610-lerning-platform-server-side-islammd39.vercel.app/programming-languages/${params.id}`)
 
             },
             {
