@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
@@ -11,24 +11,39 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const LogIn = () => {
   const [error, setError] = useState('')
-  const {userProvider, SignIn} = useContext(AuthContext);
+  const {userProvider, SignIn, gitProvider} = useContext(AuthContext);
   const navigate = useNavigate()
   const location = useLocation()
 
   const from = location?.state?.from?.pathname || '/';
 
   const googleProvider = new GoogleAuthProvider()
+  const gitHubProvider = new GithubAuthProvider()
 
   const handleGoogleSign = () =>{
      userProvider(googleProvider)
      .then(result =>{
       const user = result.user;
       console.log(user);
+      navigate(from, {replace: true})
      })
      .catch(error =>{
       console.error(error);
      })
   }
+
+  const handleGitHubSign = () =>{
+    gitProvider(gitHubProvider)
+    .then(result=>{
+      const user = result.user;
+      console.log(user);
+    })
+    .catch(error=>{
+      console.error(error);
+    })
+  }
+
+
   const logInSubmit = (e)=>{
     e.preventDefault()
     const form = e.target;
@@ -105,7 +120,7 @@ const LogIn = () => {
           </Row>
           <Row className="justify-content-lg-center mt-3 mb-3">
             <Col lg="auto">
-              <Button variant="outline-dark" type="submit">
+              <Button onClick={handleGitHubSign} variant="outline-dark" type="submit">
                 <FaGithub className="me-2"></FaGithub>
                 Login with GitHub
               </Button>

@@ -36,6 +36,7 @@ const SignUp = () => {
       toast("sorry it's not right input!")
     })
   }
+  
   return (
     <Container className="pt-3 bg-secondary">
       <Row>

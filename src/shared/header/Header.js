@@ -49,12 +49,12 @@ const Header = () => {
                 </>
               ) : (
                 <div className="d-flex">
-                  <Nav.Link as={Link} to="/login">
+                  {/* <Link to="/login">
                     Login
-                  </Nav.Link>
-                  <Nav.Link as={Link} to="/signup">
+                  </Link>
+                  <Link to="/signup">
                     Signup
-                  </Nav.Link>
+                  </Link> */}
                 </div>
               )}
             </Nav.Link>
