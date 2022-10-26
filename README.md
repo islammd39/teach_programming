@@ -1,4 +1,81 @@
-# Getting Started with Create React App
+# How should I structure my application?
+
+* npx create-react-app
+
+* npm install react-router-dom
+
+* npm install react-bootstrap bootstrap
+
+* import 'bootstrap/dist/css/bootstrap.min.css'
+
+## How can I authenticate users?
+
+* npm i firebase
+
+## How do I define models?
+
+* set up pages(home, login, signup)
+
+* set up layout(main)
+
+* set up shared(header, leftSide, totalTutorial)
+
+* set up routes(router, private router)
+
+* load data in express.js
+
+* authentication from firebase
+
+* create context auth
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +144,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
