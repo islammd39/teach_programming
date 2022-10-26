@@ -4,7 +4,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -13,7 +13,10 @@ const LogIn = () => {
   const [error, setError] = useState('')
   const {userProvider, SignIn} = useContext(AuthContext);
   const navigate = useNavigate()
-  
+  const location = useLocation()
+
+  const from = location?.state?.from?.pathname || '/';
+
   const googleProvider = new GoogleAuthProvider()
 
   const handleGoogleSign = () =>{
@@ -38,7 +41,7 @@ const LogIn = () => {
       form.reset()
       setError('')
       console.log(user);
-      navigate('/')
+      navigate(from, {replace: true})
     })
     .catch(error=>{
       setError(error.message)
@@ -107,6 +110,7 @@ const LogIn = () => {
                 Login with GitHub
               </Button>
             </Col>
+              <Form.Text className="text-warning d-inline-block text-center">Do Not Have An account please <Link to="/signup" className="text-info">REGISTER</Link></Form.Text>
           </Row>
         </Form>
       </Row>

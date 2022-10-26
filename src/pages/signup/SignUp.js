@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -103,6 +103,7 @@ const SignUp = () => {
                 Sign up
               </Button>
             </Col>
+            <Form.Text className="text-warning d-inline-block text-center">Already Have An account please <Link to="/login" className="text-info">LOGIN</Link></Form.Text>
           </Row>
           <Form.Text className="text-warning">{error}</Form.Text>
         </Form>

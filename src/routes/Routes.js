@@ -7,6 +7,7 @@ import Home from "../pages/Home/Home";
 import LogIn from "../pages/login/LogIn";
 import SignUp from "../pages/signup/SignUp";
 import Tutorial from "../pages/Tutorial/Tutorial";
+import PrivateRoutes from "./PrivateRoutes";
 
 export const routes = createBrowserRouter([
     {
@@ -21,17 +22,17 @@ export const routes = createBrowserRouter([
             },
             {
                 path:'/tutorial/:id',
-                element:<Tutorial></Tutorial>,
+                element:<PrivateRoutes><Tutorial></Tutorial></PrivateRoutes>,
                 loader:({params})=>fetch(`http://localhost:5000/programming-languages/${params.id}`)
 
             },
             {
                 path:'/faq',
-                element:<FAQ></FAQ>
+                element:<PrivateRoutes><FAQ></FAQ></PrivateRoutes>
             },
             {
                 path:'/blog',
-                element:<Blog></Blog>
+                element:<PrivateRoutes><Blog></Blog></PrivateRoutes>
             },
             {
                 path:'/login',
