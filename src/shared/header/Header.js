@@ -32,7 +32,7 @@ const Header = () => {
               <Nav.Link as={Link} to='/faq'>FAQ</Nav.Link>
               <Nav.Link as={Link} to='/blog'>Blog</Nav.Link>
                 
-              <Nav.Link href="#link">
+              <Nav.Link as={Link} to="/login">
               {
                   user?.uid ?
                  <>

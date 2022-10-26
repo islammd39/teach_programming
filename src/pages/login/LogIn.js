@@ -1,15 +1,19 @@
 import { GoogleAuthProvider } from "firebase/auth";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { FaGithub, FaGoogle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LogIn = () => {
-
-  const {userProvider} = useContext(AuthContext);
-
+  const [error, setError] = useState('')
+  const {userProvider, SignIn} = useContext(AuthContext);
+  const navigate = useNavigate()
+  
   const googleProvider = new GoogleAuthProvider()
 
   const handleGoogleSign = () =>{
@@ -22,20 +26,40 @@ const LogIn = () => {
       console.error(error);
      })
   }
+  const logInSubmit = (e)=>{
+    e.preventDefault()
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+    SignIn(email, password)
+    .then(result=>{
+      const user = result.user;
+      form.reset()
+      setError('')
+      console.log(user);
+      navigate('/')
+    })
+    .catch(error=>{
+      setError(error.message)
+      toast("sorry it's not right input!")
+      console.error(error);
+    })
+  }
 
 
 
   return (
     <Container className="pt-3 bg-secondary">
       <Row>
-        <Form className="mt-2">
-        <Form.Text className="text-bg-danger text-center">Sorry</Form.Text>
+        <Form onSubmit={logInSubmit} className="mt-2">
           <Col lg={12}>
             <Row className="justify-content-lg-center">
               <Col lg="6">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label>Email address</Form.Label>
                   <Form.Control
+                    name="email"
                     type="email"
                     placeholder="Enter email"
                     required
@@ -51,6 +75,7 @@ const LogIn = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label>Password</Form.Label>
                   <Form.Control
+                    name="password"
                     type="password"
                     placeholder="Password"
                     required
@@ -85,6 +110,8 @@ const LogIn = () => {
           </Row>
         </Form>
       </Row>
+      <ToastContainer />
+              <Form.Text className="text-warning">{error}</Form.Text>
     </Container>
   );
 };
