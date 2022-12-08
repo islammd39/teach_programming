@@ -1,6 +1,6 @@
 # This is live link
 
-+ https://b610-lerning-platform-server.web.app/
+* https://b610-lerning-platform-server.web.app/
 
 ## How should I structure my application?
 
